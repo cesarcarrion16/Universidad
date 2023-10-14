@@ -1,0 +1,3 @@
+﻿  Juego.cpp
+C:\Users\leona\OneDrive\Escritorio\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Ciclo_For\Ciclo_For\Juego.cpp(10,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Ciclo_For.vcxproj -> C:\Users\leona\OneDrive\Escritorio\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Ciclo_For\Debug\Ciclo_For.exe

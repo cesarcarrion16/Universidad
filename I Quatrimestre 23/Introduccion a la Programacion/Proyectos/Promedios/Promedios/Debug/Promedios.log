@@ -1,0 +1,5 @@
+﻿  Source.cpp
+D:\Users\ccarrion\Desktop\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Promedios\Promedios\Source.cpp(50,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Users\ccarrion\Desktop\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Promedios\Promedios\Source.cpp(51,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Users\ccarrion\Desktop\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Promedios\Promedios\Source.cpp(52,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Promedios.vcxproj -> D:\Users\ccarrion\Desktop\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Promedios\Debug\Promedios.exe

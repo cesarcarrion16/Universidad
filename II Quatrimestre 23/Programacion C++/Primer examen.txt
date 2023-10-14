@@ -1,0 +1,189 @@
+Ejercicio #1
+
+/*Realice un programa donde se solicite al usuario los datos para cargar una matriz de 3x4, una vez cargados deberán determinar lo siguiente:
+
+-Mostrar la matriz
+
+-Promedio general de los números ingresados
+
+-Porcentaje de números positivos. (Deberán ingresar números negativos a la matriz)
+
+-Sumatoria de números pares ingresados a la matriz.*/
+
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+
+int main() {
+
+	int matriz[3][4], sumar_pares = 0, negativo = 0;
+	float Promedio_general, porcentaje_positivos = 0, sumar_promedio = 0, positivos = 0;
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 4; j++) {
+			cout << "Digite un numero [" << i << "][" << j << "]:";
+			cin >> matriz[i][j];
+
+			/* Promedio general de los números ingresados */
+
+			sumar_promedio = sumar_promedio + matriz[i][j];
+
+			/*Porcentaje de números positivos. (Deberán ingresar números negativos a la matriz)*/
+			if (matriz[i][j] >= 0) {
+				positivos++;
+			}
+
+
+			/*Sumatoria de números pares ingresados a la matriz*/
+			if (matriz[i][j] % 2 == 0) {
+				sumar_pares = sumar_pares + matriz[i][j];
+			}
+
+		}
+	}
+	Promedio_general = sumar_promedio / 12;
+	porcentaje_positivos = (positivos / 12) * 100;
+
+	/*Mostrar Matriz*/
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 4; j++) {
+			cout << matriz[i][j] << "   ";
+		}
+		cout << "\n";
+	}
+
+	cout << "El promedio general es de: " << Promedio_general << endl;
+	cout << "El porcentaje de numeros positivos es: " << porcentaje_positivos << "%" << endl;
+	cout << "La suma de los numeros pares es: " << sumar_pares << endl;
+
+
+	system("pause");
+	return 0;
+
+}
+
+
+Ejercicio #2
+
+
+/*Programa que permita llenar una matriz 4x4, muestre en pantalla SI el numero ingresado es un número es par o impar , y mostrar la matriz resultante.*/
+
+
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+
+int main() {
+
+	int matriz1[4][4], par[4][4], impar[4][4];
+
+
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			cout << "Digite un numero [" << i << "][" << j << "]:";
+			cin >> matriz1[i][j];
+
+
+		}
+	}
+	cout << "\n";
+
+	/*Determina si es par o impar*/
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (matriz1[i][j] % 2 == 0) {
+				par[i][j] = matriz1[i][j];
+				cout << par[i][j] << " es un numero par" << endl;
+			}
+			else {
+				impar[i][j] = matriz1[i][j];
+				cout << impar[i][j] << " es un numero impar" << endl;
+			}
+
+		}
+	}
+	cout << "\n";
+
+
+	/*Mostrar Matriz*/
+	cout << "La matriz resultante es: \n";
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			cout << matriz1[i][j] << "   ";
+		}
+		cout << "\n";
+	}
+	cout << "\n";
+
+	system("pause");
+	return 0;
+
+}
+
+
+Ejercicio #3
+
+
+/*Realice un programa donde se pida al usuario llenar dos cadenas de caracteres, luego, unir ambas cadenas y Mostrar las cadenas unidas.
+
+Si la cadena es mayor a 20 caracteres, indicar la longitud de la cadena, si es menor a 20 caracteres indicar el siguiente mensaje " la cadena no supera los 20 caracteres".
+
+Si la longitud es mayor a 20 caracteres mostrar la cadena en Mayúscula de lo contrario mostrar la cadena invertida*/
+
+
+#include<iostream>
+#include<stdlib.h>
+#include<string.h>
+using namespace std;
+
+int main() {
+
+	int longitud=0;
+	char cadena1[100], cadena2[100];
+	string cadenas_unidas[1000];
+
+	//solicita los datos
+	cout << "Digite la primera cadena de caracteres: ";
+	cin.getline(cadena1, 100, '\n');
+	cout << "Digite la segunda cadena de caracteres: ";
+	cin.getline (cadena2,100,'\n');
+
+	strcat_s(cadena1, " "); //le da un espacio a las 2 cadenas
+	strcat_s(cadena1, cadena2); //Une las 2 cadenas
+	longitud = strlen(cadena1); //Saca la longitud de la cadena
+	cout << "\n";
+	cout << cadena1 << endl;
+	cout << "\n";
+	cout << "La longitud de la cadena es de: " << longitud << endl;
+
+	cout << "\n";
+
+	if (longitud >= 20) {
+		_strupr_s(cadena1);//convierte a mayuscula
+		cout << "La longitud de la cadena es mayor a 20 caracteres"<<endl;
+		cout << "\n";
+		cout<< "La cadena de caracteres es: \n"<<cadena1<<endl;
+	}
+	else {
+		_strrev(cadena1);//invierte la palabra
+		cout << "La cadena no supera los 20 caracteres\n";
+		cout << "\n";
+		cout << "La cadena de caracteres es: \n" << cadena1 << endl;
+	}
+	cout << "\n";
+
+	
+	system("pause");
+	return 0;
+
+}
+
+
+
+
+
+
+
+
+
+

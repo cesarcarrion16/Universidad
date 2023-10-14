@@ -1,0 +1,150 @@
+
+Ejercicio 1
+/*Escriba un programa que rellene una matriz de 5x4, y calcule el 45% del total de los elementos ingresados*/
+
+
+
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+
+int main() {
+	int matriz[5][4], suma = 0;
+	float porcentaje;
+
+
+	/*solicita los numeros*/
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 4; j++) {
+			cout << "Digite un numero [" << i << "][" << j << "]:";
+			cin >> matriz[i][j];
+		}
+	}
+	/*Muestra los datos*/
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 4; j++) {
+			cout << matriz[i][j] << "   ";
+		}
+		cout << "\n";
+	}
+	cout << "\n";
+	/*Suma los datos y saca porcentaje*/
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 4; j++) {
+			suma = suma + matriz[i][j];
+			porcentaje = suma * 0.45;
+		}
+	}
+
+	cout << "La suma de los elementos es: " << suma << endl;
+	cout << "El porcentaje de los elementos es: " << porcentaje <<"%" << endl;
+
+
+
+
+	system("pause");
+	return 0;
+
+}
+
+
+
+Ejercicio 2
+
+/*Escribe un programa que pida nueve números enteros y los almacene en una matriz 3x3.Calcula la suma de los números de cada fila y mostrar por pantalla el número de  fila con mayor suma.*/
+
+
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+
+int main() {
+    int matriz[3][3], fila_mayor = 0, suma_mayor=0, sumar_filas[3] = { 0, 0, 0 };
+
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << "Digite un numero [" << i << "][" << j << "]:";
+            cin >> matriz[i][j];           
+            sumar_filas[i] += matriz[i][j];/*suma las filas*/
+         }
+    }
+    /*Muestra los datos*/
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << matriz[i][j] << "   ";
+        }
+        cout << "\n";
+    }
+
+    /*Genera el resultado de cual numero de fila es mayor*/
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (sumar_filas[i] > suma_mayor) {
+                suma_mayor = sumar_filas[i];
+                fila_mayor = i;
+            }
+   
+        }
+    }
+
+    cout << "La fila con la mayor suma es la siguiente: " << fila_mayor<< endl;
+
+    system("pause");
+    return 0;
+
+}
+
+
+Ejercicio 3
+/*Programa que calcule el 5 % de cada uno de los elementos de una matriz 4 * 3 */
+
+
+
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+
+int main()
+{
+    int matriz1[4][3], vector = 0;
+    float calculo_porcentaje = 0, matriz2[4][3];
+
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << "Digite un numero [" << i << "][" << j << "]:";
+            cin >> matriz1[i][j];
+            calculo_porcentaje = matriz1[i][j] * 0.05;/*saca el porcentaje*/
+            matriz2[i][j] = calculo_porcentaje;/*Guarda el porcentaje dentro de la segunda matriz*/
+
+        }
+    }
+    cout << "\n";
+    cout << "La matriz digitada es: \n";
+    cout << "\n";
+    /*Muestra los datos*/
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << matriz1[i][j] << "   ";
+        }
+        cout << "\n";
+    }
+    /*Muestra la matriz*/
+    cout << "\n";
+    cout << "El calculo del 5% de la matriz es: \n";
+    cout << "\n";
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << matriz2[i][j] << "%   ";
+        }
+        cout << "\n";
+    }
+    
+
+    system("pause");
+    return 0;
+
+}
+
+

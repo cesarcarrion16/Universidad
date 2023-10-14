@@ -1,0 +1,153 @@
+/* 1) Defina una estructura que indique el tiempo empleado por un ciclista en
+recorrer una etapa. La estructura debe tener tres campos: horas, minutos y segundos.
+Escriba un programa que dado 3 etapas calcule el tiempo total empleado en correr todas las etapas.
+NOTA: Usar FUNCIONES Y PUNTEROS.*/
+
+#include <iostream>
+#include<stdlib.h>
+using namespace std;
+
+struct Ciclista {
+    int horas;
+    int minutos;
+    int segundos;
+}etapas[3],*puntero_etapas=etapas;
+
+void pedirDatos();
+void calcularTiempo(Ciclista*);
+
+int main() {
+
+    pedirDatos();
+    calcularTiempo(puntero_etapas);
+
+
+    system("pause");
+    return 0;
+}
+
+void pedirDatos() {
+    for (int i = 0; i < 3; i++) {
+        // Se accede a la estructura mediante el puntero y para almacenar la informacion
+        cout << "Digite las horas de la etapa " << i + 1 << ": ";
+        cin >> (puntero_etapas + i)->horas;
+        cout << "Digite los minutos de la etapa " << i + 1 << ": ";
+        cin >> (puntero_etapas + i)->minutos;
+        cout << "Digite los segundos de la etapa " << i + 1 << ": ";
+        cin >> (puntero_etapas + i)->segundos;
+        cout << endl;
+    }
+}
+
+void calcularTiempo(Ciclista* puntero_etapas) {
+
+    int horasT = 0, minutosT = 0, segT = 0;
+    for (int i = 0; i < 3; i++) {
+        // Se accede a la estructura mediante el puntero para sumar los tiempos
+        horasT += (puntero_etapas + i)->horas;
+        minutosT += (puntero_etapas + i)->minutos;
+        segT += (puntero_etapas + i)->segundos;
+
+        if (minutosT >= 60) {
+            minutosT -= 60;
+            horasT++;
+        }
+        if (segT >= 60) {
+            segT -= 60;
+            minutosT++;
+        }
+    }
+    cout << "El tiempo total empleado en correr todas las etapas es de: " << horasT << ":" << minutosT << ":" << segT << endl;
+}
+
+
+
+
+
+
+
+/*2) Realizar un programa que lea un arreglo de estructuras los datos de N empleados  de la empresa
+y que imprima los datos del empleado con mayor y menor salario.
+NOTA: Usar FUNCIONES Y PUNTEROS*/
+
+
+#include <iostream>
+#include<conio.h>
+using namespace std;
+
+struct Empleado {
+    char nombre[30];
+    int edad;
+    int salario;
+}empleados[100], * p_empleados = empleados;
+
+
+void pedirDatos(int);
+void salario_mayor(Empleado*, int);
+void salario_menor(Empleado*, int);
+
+
+
+int main() {
+    int n;
+    cout << "Digite la cantidad de empleados a ingresar: " << endl;
+    cin >> n;
+    cout << "\n";
+
+    pedirDatos(n);
+    salario_mayor(p_empleados, n);
+    salario_menor(p_empleados, n);
+
+    system("pause");
+    return 0;
+}
+
+
+
+void pedirDatos(int n) {
+    for (int i = 0; i < n; i++) {
+        // Se accede a la estructura mediante el puntero y para almacenar la informacion
+        while (getchar() != '\n');
+        cout << "Digite el nombre del empleado " << i + 1 << ": ";
+        cin.getline((p_empleados + i)->nombre, 30, '\n');
+        cout << "Digite la edad del empleado " << i + 1 << ": ";
+        cin >> (p_empleados + i)->edad;
+        cout << "Digite el salario del empleado " << i + 1 << ": ";
+        cin >> (p_empleados + i)->salario;
+        cout << "\n";
+    }
+}
+
+
+void salario_mayor(Empleado* p_empleados, int n) {
+    int salario_may = 0;
+    int pos_mayor = 0;
+
+    for (int i = 0; i < n; i++) {
+        if ((p_empleados + i)->salario > salario_may) {
+            salario_may = (p_empleados + i)->salario;
+            pos_mayor = i;
+        }
+    }
+    cout << "\nEmpleado con mayor salario es:" << endl;
+    cout << "Nombre: " << (p_empleados + pos_mayor)->nombre << endl;
+    cout << "Edad: " << (p_empleados + pos_mayor)->edad << endl;
+    cout << "Salario: " << (p_empleados + pos_mayor)->salario << endl;
+}
+
+void salario_menor(Empleado* p_empleados, int n) {
+    int salario_men = 999999999;
+    int pos_menor = 0;
+
+    for (int i = 0; i < n; i++) {
+        if ((p_empleados + i)->salario < salario_men) {
+            salario_men = (p_empleados + i)->salario;
+            pos_menor = i;
+        }
+    }
+    cout << "\nEmpleado con menor salario es:" << endl;
+    cout << "Nombre: " << (p_empleados + pos_menor)->nombre << endl;
+    cout << "Edad: " << (p_empleados + pos_menor)->edad << endl;
+    cout << "Salario: " << (p_empleados + pos_menor)->salario << endl;
+}
+

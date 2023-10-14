@@ -1,0 +1,7 @@
+﻿  Ejercicio1.cpp
+C:\Users\leona\OneDrive\Escritorio\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Examen ejercicio 1\Examen ejercicio 1\Ejercicio1.cpp(52,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\leona\OneDrive\Escritorio\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Examen ejercicio 1\Examen ejercicio 1\Ejercicio1.cpp(61,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Ejercicio2.cpp
+  Generating Code...
+Ejercicio2.obj : error LNK2005: main already defined in Ejercicio1.obj
+C:\Users\leona\OneDrive\Escritorio\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Examen ejercicio 1\x64\Debug\Examen ejercicio 1.exe : fatal error LNK1169: one or more multiply defined symbols found

@@ -1,0 +1,158 @@
+/* 1.Desarrolle un programa en C++ que permita ingresar y almacenar las notas de todos los
+alumnos del curso de Introducción a la Programación.Mostrar las notas ingresadas y la
+cantidad de estudiantes que tienen una nota mayor al promedio.*/
+
+
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+
+int main() {
+	int cantidad_alumnos, cont = 0, cantidad_alumnos_sobre_promedio = 0, suma_notas = 0;
+	float notas[100], promedio;
+
+	cout << "Ingrese la cantidad de alumnos a evaluar: ";
+	cin >> cantidad_alumnos;
+
+	//solicita la nota
+	for (int i = 0; i < cantidad_alumnos; i++)
+	{
+		cout << i + 1 << " Ingrese la nota del alumno: \n";
+		cin >> notas[i];
+	}
+	cout << "\n";
+
+	//muestra los datos
+	for (int i = 0; i < cantidad_alumnos; i++) {
+		cout << " " << notas[i] << "\n";
+	}
+	cout << "\n";
+
+
+	// Saca cuantos alumnos son mayor al promedio
+
+	// Sumar las notas totales
+	for (int i = 0; i < cantidad_alumnos; i++) {
+		suma_notas = notas[i]++;
+	}
+
+	promedio = suma_notas / cantidad_alumnos;
+	// Determinar la cantidad de alumnos que estan por encima del promedio
+	for (int i = 0; i < cantidad_alumnos; i++)
+	{
+		if (notas[i]>promedio)
+		{
+			cantidad_alumnos_sobre_promedio++;
+		}
+	}
+
+	cout << " El promedio de : " << promedio << endl;
+	cout << " La cantidad de alumnos sobre el promedio es : " << cantidad_alumnos_sobre_promedio << endl;
+
+	system("pause");
+	return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/*2.Desarrolle un programa en C++ que permita ingresar y almacenar el código de todos los
+artículos de una bodega. Mostrar los códigos ingresados, e indicar la cantidad de códigos
+que tienen un valor menor al promedio. Utilice un vector denominado codigos[ ] para
+almacenar el código de cada artículo.*/
+
+
+#include<iostream>
+#include<stdlib.h>
+#include <vector>
+#include <numeric>
+using namespace std;
+
+int main() {
+	int n, suma_codigos=0;
+	int promedio = 0, temp = 0;
+
+	// Crear un vector vacio
+	vector<int> codigos;
+
+	cout << " Ingrese el numero de productos que desea ingresar: ";
+	cin >> n;
+
+	for (int i = 0; i < n; i++)
+	{
+		do {
+			cout << " Ingrese el codigo del producto " << (i + 1) << ":";
+			cin >> temp;
+			if (temp < 0) {
+				cout << "Codigo debe ser mayor que cero... ERROR!!!!\n";
+			}
+			else {
+				codigos.push_back(temp);
+			}
+		} while (codigos[i] <= 0);
+	}
+
+	promedio = accumulate(codigos.begin(), codigos.end(), 0) / codigos.size();
+	cout << "\n";
+
+	//mostrando los codigos
+	int cantidad_codigos = 0;
+	for (int i = 0; i < n; i++) {
+		cout << "Codigo del producto " << i + 1 << ":" << codigos[i] << endl;
+		if (codigos[i] < promedio) {
+			cantidad_codigos++;
+		}
+	}
+	cout << "\n";
+	cout << "Los productos que contienen un valor menor al promedio son: " << cantidad_codigos << endl;
+
+	system("pause");
+	return 0;
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*3.Desarrolle un programa en C++ que permita ingresar y almacenar 10 números enteros
+positivos. Calcular y mostrar el menor y el mayor número ingresado. Utilices vectores.*/
+
+
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+int main()
+{
+    int numero[10], mayor = 0, menor = 0, suma = 0;
+
+    for (int i = 0; i < 10; i++) {
+        do {
+            cout << "Ingrese el numero " << (i + 1) << " : ";
+            cin >> numero[i];
+            if (numero[i] <= 0) {
+                cout << "El numero debe ser mayor que cero... Error!!!\n";
+            }
+        } while (numero[i] <= 0);
+    }
+    cout << "\n";
+    for (int i = 0; i < 10; i++)
+    {
+        if (0 == i) {
+            mayor = numero[i];
+            menor = numero[i];
+        }
+        else if (numero[i] > mayor) {
+            mayor = numero[i];
+        }
+        else if (numero[i] < menor) {
+            menor = numero[i];
+        }
+        suma += numero[i];
+    }
+    cout << "El numero menor es: " << menor << endl;
+    cout << "El numero mayor es: " << mayor << endl;
+
+
+    system("pause");
+    return 0;
+}
+

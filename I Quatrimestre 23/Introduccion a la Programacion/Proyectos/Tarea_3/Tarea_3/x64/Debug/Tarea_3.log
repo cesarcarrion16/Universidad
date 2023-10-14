@@ -1,0 +1,12 @@
+﻿  Ejercicio3.cpp
+  Ejercicio_1.cpp
+C:\Users\leona\OneDrive\Escritorio\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Tarea_3\Tarea_3\Ejercicio_1.cpp(36,24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\leona\OneDrive\Escritorio\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Tarea_3\Tarea_3\Ejercicio_1.cpp(39,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Ejercicio_2.cpp
+C:\Users\leona\OneDrive\Escritorio\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Tarea_3\Tarea_3\Ejercicio_2.cpp(37,75): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  LINK : C:\Users\leona\OneDrive\Escritorio\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Tarea_3\x64\Debug\Tarea_3.exe not found or not built by the last incremental link; performing full link
+Ejercicio_1.obj : error LNK2005: main already defined in Ejercicio3.obj
+Ejercicio_2.obj : error LNK2005: main already defined in Ejercicio3.obj
+Source.obj : error LNK2005: main already defined in Ejercicio3.obj
+C:\Users\leona\OneDrive\Escritorio\I Quatrimestre 23\Introduccion a la programacion\Proyectos\Tarea_3\x64\Debug\Tarea_3.exe : fatal error LNK1169: one or more multiply defined symbols found

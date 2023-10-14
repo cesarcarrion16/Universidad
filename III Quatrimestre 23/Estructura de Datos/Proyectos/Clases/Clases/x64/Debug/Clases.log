@@ -1,0 +1,5 @@
+﻿  Ejercicio5.cpp
+C:\Users\leona\Desktop\UCEM\Universidad\III Quatrimestre 23\Estructura de Datos\Proyectos\Clases\Clases\Ejercicio5.cpp(105,36): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\leona\Desktop\UCEM\Universidad\III Quatrimestre 23\Estructura de Datos\Proyectos\Clases\Clases\Ejercicio5.cpp(115,16): error C2374: 'universitario1': redefinition; multiple initialization
+C:\Users\leona\Desktop\UCEM\Universidad\III Quatrimestre 23\Estructura de Datos\Proyectos\Clases\Clases\Ejercicio5.cpp(110,16): message : see declaration of 'universitario1'
+C:\Users\leona\Desktop\UCEM\Universidad\III Quatrimestre 23\Estructura de Datos\Proyectos\Clases\Clases\Ejercicio5.cpp(117,2): error C2065: 'universitario2': undeclared identifier
